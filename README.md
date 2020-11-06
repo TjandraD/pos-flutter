@@ -1,4 +1,4 @@
-# pos_flutter
+# pos-flutter
 
 A new Flutter project.
 
