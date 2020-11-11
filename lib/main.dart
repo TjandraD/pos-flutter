@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos_flutter/screens/login_screen.dart';
+import 'package:pos_flutter/screens/signup_screen.dart';
 import 'package:pos_flutter/screens/welcome_screen.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
-        WelcomeScreen.id: (context) => WelcomeScreen(),
+        SignUpScreen.id: (context) => SignUpScreen(),
       },
     );
   }

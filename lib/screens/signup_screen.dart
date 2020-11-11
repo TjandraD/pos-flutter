@@ -4,13 +4,14 @@ import '../widgets/rounded_button.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class RegistrationScreen extends StatefulWidget {
+class SignUpScreen extends StatefulWidget {
+  static String id = 'signup';
+
   @override
-  _RegistrationScreenState createState() => _RegistrationScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
-  static String id = 'signup';
+class _SignUpScreenState extends State<SignUpScreen> {
   String name;
   String email;
   String password;
