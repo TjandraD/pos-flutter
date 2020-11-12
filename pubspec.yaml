@@ -9,7 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore: ^0.14.3
   cupertino_icons: ^1.0.0
+  firebase_auth: ^0.18.3
+  firebase_core: ^0.5.2
   flutter_svg: ^0.19.1
   modal_progress_hud: ^0.1.3
 
