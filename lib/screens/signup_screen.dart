@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../widgets/rounded_button.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:io' show Platform;
+import 'package:flutter/cupertino.dart';
+import '../data/roles.dart';
 
 class SignUpScreen extends StatefulWidget {
   static String id = 'signup';
@@ -16,7 +19,48 @@ class _SignUpScreenState extends State<SignUpScreen> {
   String email;
   String password;
   String confirmPassword;
+  String selectedRole;
   bool showSpinner = false;
+
+  CupertinoPicker iOSPicker() {
+    List<Text> pickerItems = [];
+    for (String role in rolesList) {
+      pickerItems.add(Text(role));
+    }
+
+    return CupertinoPicker(
+      backgroundColor: Colors.lightBlue,
+      itemExtent: 32.0,
+      onSelectedItemChanged: (selectedIndex) {
+        setState(() {
+          selectedRole = rolesList[selectedIndex];
+        });
+      },
+      children: pickerItems,
+    );
+  }
+
+  DropdownButton<String> androidDropdown() {
+    List<DropdownMenuItem<String>> dropdownItems = [];
+    for (String role in rolesList) {
+      var newItem = DropdownMenuItem(
+        child: Text(role),
+        value: role,
+      );
+      dropdownItems.add(newItem);
+    }
+
+    return DropdownButton<String>(
+      hint: Text('Select a role'),
+      value: selectedRole,
+      items: dropdownItems,
+      onChanged: (value) {
+        setState(() {
+          selectedRole = value;
+        });
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +129,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 },
                 decoration:
                     kTextFieldDecoration.copyWith(hintText: 'Confirm password'),
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                ),
+                child: Platform.isIOS ? iOSPicker() : androidDropdown(),
               ),
               SizedBox(
                 height: 24.0,
