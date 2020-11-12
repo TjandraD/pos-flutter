@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
 import '../data/roles.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import '../services/auth.dart';
 
 class SignUpScreen extends StatefulWidget {
   static String id = 'signup';
@@ -145,7 +147,56 @@ class _SignUpScreenState extends State<SignUpScreen> {
               RoundedButton(
                 color: Color(0xFF7579E7),
                 title: 'Register',
-                onPressed: () {},
+                onPressed: () async {
+                  setState(() {
+                    showSpinner = true;
+                  });
+
+                  if (password == confirmPassword) {
+                    dynamic result = await AuthServices.signUp(
+                        email.trim(), password.trim(), selectedRole, name);
+                    if (result != null) {
+                      setState(() {
+                        showSpinner = false;
+                      });
+                      Alert(
+                        context: context,
+                        title: "Sign Up Successful",
+                        desc: "result",
+                        buttons: [
+                          DialogButton(
+                            child: Text(
+                              "Okay",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                            width: 120,
+                          )
+                        ],
+                      );
+                    }
+                  } else {
+                    setState(() {
+                      showSpinner = false;
+                    });
+                    Alert(
+                      context: context,
+                      title: "Password Doesn't Match",
+                      desc: "Please check your password again",
+                      buttons: [
+                        DialogButton(
+                          child: Text(
+                            "Okay",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                          width: 120,
+                        )
+                      ],
+                    ).show();
+                  }
+                },
               ),
             ],
           ),
