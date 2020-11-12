@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "775821937777",
+    "firebase_url": "https://pos-flutter-8b0ad.firebaseio.com",
+    "project_id": "pos-flutter-8b0ad",
+    "storage_bucket": "pos-flutter-8b0ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775821937777:android:a5b6d3ac5762112b921fd0",
+        "android_client_info": {
+          "package_name": "com.tdarmo.pos_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775821937777-pi1qfpj8a1cue5rka7ulnt1akp2u7f48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpQE0qwripLz8PBnmfOONJpb6Fit30Tj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775821937777-pi1qfpj8a1cue5rka7ulnt1akp2u7f48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
