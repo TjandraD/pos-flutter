@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pos_flutter/screens/login_screen.dart';
-import 'package:pos_flutter/screens/signup_screen.dart';
 import '../widgets/rounded_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -25,7 +24,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 25.0,
+              height: 50.0,
             ),
             RoundedButton(
               onPressed: () {
@@ -33,13 +32,6 @@ class WelcomeScreen extends StatelessWidget {
               },
               color: Color(0xFF9AB3F5),
               title: 'Log In',
-            ),
-            RoundedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, SignUpScreen.id);
-              },
-              color: Color(0xFF7579E7),
-              title: 'Register',
             ),
           ],
         ),
