@@ -1,13 +1,13 @@
-import '../constants.dart';
+import '../../constants.dart';
 import 'package:flutter/material.dart';
-import '../widgets/rounded_button.dart';
+import '../../widgets/rounded_button.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
-import '../data/roles.dart';
+import '../../data/roles.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import '../services/auth.dart';
+import '../../services/auth.dart';
 
 class SignUpScreen extends StatefulWidget {
   static String id = 'signup';
