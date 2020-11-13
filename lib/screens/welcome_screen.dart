@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pos_flutter/constants.dart';
 import 'package:pos_flutter/screens/login_screen.dart';
 import '../widgets/rounded_button.dart';
 
@@ -30,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, LoginScreen.id);
               },
-              color: Color(0xFF9AB3F5),
+              color: blueGrey,
               title: 'Log In',
             ),
           ],

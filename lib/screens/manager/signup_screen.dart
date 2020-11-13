@@ -145,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 24.0,
               ),
               RoundedButton(
-                color: Color(0xFF7579E7),
+                color: darkPurple,
                 title: 'Register',
                 onPressed: () async {
                   setState(() {
