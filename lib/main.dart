@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_flutter/screens/admin/home_admin.dart';
 import 'package:pos_flutter/screens/login_screen.dart';
 import 'package:pos_flutter/screens/manager/home_manager.dart';
 import 'package:pos_flutter/screens/manager/signup_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
         HomeManager.id: (context) => HomeManager(),
+        HomeAdmin.id: (context) => HomeAdmin(),
       },
     );
   }
