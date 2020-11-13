@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos_flutter/constants.dart';
+import 'package:pos_flutter/screens/admin/brand_list.dart';
 import 'dart:async';
 import '../../widgets/bottom_navigation.dart';
 import '../../services/auth.dart';
@@ -47,9 +48,7 @@ class _HomeAdminState extends State<HomeAdmin> {
           Center(
             child: Text('Items'),
           ),
-          Center(
-            child: Text('Brands'),
-          ),
+          BrandList(),
           Center(
             child: Text('Distributors'),
           ),
