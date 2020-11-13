@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_flutter/screens/admin/home_admin.dart';
 import 'package:pos_flutter/screens/manager/home_manager.dart';
 import '../widgets/rounded_button.dart';
 import '../constants.dart';
@@ -83,6 +84,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     String role = await AuthServices.validateUserRole(result);
                     if (role == 'Manager') {
                       Navigator.pushNamed(context, HomeManager.id);
+                    }
+                    if (role == 'Admin') {
+                      Navigator.pushNamed(context, HomeAdmin.id);
                     }
                   }
                 },
