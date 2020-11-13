@@ -44,4 +44,11 @@ class AuthServices {
     dynamic userData = await _firestore.collection('users').doc(uid).get();
     return userData['role'];
   }
+
+  static Future<dynamic> addBrand(String brandName) async {
+    dynamic brand = await _firestore.collection('brands').add({
+      'brand': brandName,
+    });
+    return brand;
+  }
 }
