@@ -19,6 +19,8 @@ class AuthServices {
       await _auth.currentUser.updateProfile(displayName: name);
       _firestore.collection('users').doc(user.uid).set({
         'role': role,
+        'name': name,
+        'email': email,
       });
       return user.uid;
     } catch (error) {
