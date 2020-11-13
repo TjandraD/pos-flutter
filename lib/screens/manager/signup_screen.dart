@@ -159,22 +159,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       setState(() {
                         showSpinner = false;
                       });
-                      Alert(
-                        context: context,
-                        title: "Sign Up Successful",
-                        desc: "result",
-                        buttons: [
-                          DialogButton(
-                            child: Text(
-                              "Okay",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
-                            ),
-                            onPressed: () => Navigator.pop(context),
-                            width: 120,
-                          )
-                        ],
-                      );
+                      Navigator.pop(context);
                     }
                   } else {
                     setState(() {
