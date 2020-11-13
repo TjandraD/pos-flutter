@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pos_flutter/screens/manager/home_manager.dart';
 import '../widgets/rounded_button.dart';
 import '../constants.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../services/auth.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login';
@@ -66,7 +68,24 @@ class _LoginScreenState extends State<LoginScreen> {
               RoundedButton(
                 color: Color(0xFF9AB3F5),
                 title: 'Log In',
-                onPressed: () {},
+                onPressed: () async {
+                  setState(() {
+                    showSpinner = true;
+                  });
+                  dynamic result =
+                      await AuthServices.logIn(email.trim(), password.trim());
+
+                  setState(() {
+                    showSpinner = false;
+                  });
+
+                  if (result != null) {
+                    String role = await AuthServices.validateUserRole(result);
+                    if (role == 'Manager') {
+                      Navigator.pushNamed(context, HomeManager.id);
+                    }
+                  }
+                },
               ),
             ],
           ),
